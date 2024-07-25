@@ -8,7 +8,7 @@
 5. [Conclusion](#conclusion)
 
    
-## Introduction
+## Ask Phase
 <a id="introduction"></a>
 Bellabeat, founded by Urška Sršen and Sando Mur, is a leading company in health-focused smart products. Sršen, leveraging her artistic background, has created elegant technology that helps women monitor and improve their health by tracking activity, sleep, stress, and reproductive health. Since its founding in 2013, Bellabeat has rapidly grown and established itself as a key player in women\'s wellness technology.
 
@@ -22,7 +22,8 @@ Your data loading content here...
 
 ## Data Cleaning
 <a id="data-cleaning"></a>
-Your data cleaning content here...
+
+
 
 ## Analysis
 <a id="analysis"></a>
