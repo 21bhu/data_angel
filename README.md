@@ -1,11 +1,13 @@
 # data_angel
 
 # Table of Contents
-1. [Introduction](#introduction)
-2. [Data Loading](#data-loading)
-3. [Data Cleaning](#data-cleaning)
-4. [Analysis](#analysis)
-5. [Conclusion](#conclusion)
+1. [Ask](#Ask phase)
+2. [Prepare](#Prepare)
+3. [Process](#Process)
+4. [Analyse](#Analyse)
+5. [Share](#Share)
+6. [Act](#Act)
+   
 
    
 ## Ask Phase
@@ -16,19 +18,21 @@ By 2016, Bellabeat had expanded globally, launching multiple products and making
 
 To further its growth, Sršen has directed the marketing analytics team to analyze smart device usage data. The objective is to understand how consumers are using Bellabeat’s products and to use these insights to develop strategic recommendations for enhancing Bellabeat’s marketing efforts.
 
-## Data Loading
-<a id="data-loading"></a>
-Your data loading content here...
+## Prepare
+<a id="Prepare"></a>
 
-## Data Cleaning
-<a id="data-cleaning"></a>
-
+## Process
+<a id="Process"></a>
 
 
-## Analysis
-<a id="analysis"></a>
-Your analysis content here...
 
-## Conclusion
+## Analyse
+<a id="analyse"></a>
+.
+
+## Share
 <a id="conclusion"></a>
-Your conclusion content here..
+
+## Act
+<a id="Act"></a>
+
