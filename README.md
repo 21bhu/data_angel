@@ -17,7 +17,6 @@ Analyze smart device usage data to gain insights into how consumers use non-Bell
 Apply these insights to a selected Bellabeat product
 Identify trends in smart device usage and how they could apply to Bellabeat customers
 Determine how these trends could influence Bellabeat's marketing strategy
-* Key stakeholders:
 > Urška Sršen: Bellabeat's cofounder and Chief Creative officer.
 > Sando Mur: Mathematician and Bellabeat's cofounder; a key member of the Bellabeat executive team.
 > Bellabeat marketing analytics team
