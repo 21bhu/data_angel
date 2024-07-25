@@ -1,12 +1,12 @@
 # data_angel
 
 # Table of Contents
-1. [Ask](#Ask phase)
-2. [Prepare](#Prepare)
-3. [Process](#Process)
-4. [Analyse](#Analyse)
-5. [Share](#Share)
-6. [Act](#Act)
+1. [Ask](#Ask)
+3. [Prepare](#Prepare)
+4. [Process](#Process)
+5. [Analyse](#Analyse)
+6. [Share](#Share)
+7. [Act](#Act)
    
 
    
