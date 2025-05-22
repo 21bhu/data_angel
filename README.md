@@ -6,7 +6,7 @@ This project, completed as part of the Google Data Analytics Professional Certif
 
 # Table of Contents
 
-## Problem Statement
+
 [Problem Statement](#problem-statement)
 
 ## Business Task
@@ -40,8 +40,7 @@ Key Insights and Recommendations
 Conclusion
 
 
-
-[Problem Statement](#problem-statement)
+## Problem Statement
 
 Bellabeat, while successful, has the potential to expand its presence in the global smart device market. Urška Sršen, cofounder and Chief Creative Officer, believes that analyzing fitness data from smart devices can unlock new growth avenues. The core questions guiding this analysis are:
 
