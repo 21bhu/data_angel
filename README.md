@@ -282,7 +282,30 @@ ggplot(data = dailyActivity_merged, aes(x = TotalSteps, y = Calories)) +
 
 This bar chart highlights the periods of peak and low activity intensity throughout a typical day.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   # Ensure 'ActivityHour' and 'Time' are correctly formatted and consistent  # If 'ActivityHour' needs conversion to a proper time format, do it here.  # Assuming hourlyIntensities_merged already has 'ActivityHour' as a factor or can be converted.  hourlyIntensities_merged$ActivityHour <- as.factor(hourlyIntensities_merged$ActivityHour)  # Plot Average Total Intensity by Hour of the Day  ggplot(data = hourlyIntensities_merged, aes(x = ActivityHour, y = AverageIntensity)) +    geom_bar(stat = "identity", fill = 'darkblue') +    theme(axis.text.x = element_text(angle = 90, hjust = 1)) +    labs(      title = "Average Total Intensity by Hour of the Day",      x = "Hour of the Day",      y = "Mean Intensity"    ) +    theme_minimal() +    theme(      plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),      axis.title = element_text(size = 12),      axis.text.x = element_text(size = 8),      axis.text.y = element_text(size = 10),      panel.grid.major = element_line(linewidth = 0.5, color = "gray"),      panel.grid.minor = element_blank()    )   `
+```
+# Ensure 'ActivityHour' and 'Time' are correctly formatted and consistent
+# If 'ActivityHour' needs conversion to a proper time format, do it here.
+# Assuming hourlyIntensities_merged already has 'ActivityHour' as a factor or can be converted.  hourlyIntensities_merged$ActivityHour <- as.factor(hourlyIntensities_merged$ActivityHour)
+
+# Plot Average Total Intensity by Hour of the Day
+ggplot(data = hourlyIntensities_merged, aes(x = ActivityHour, y = AverageIntensity)) +
+    geom_bar(stat = "identity", fill = 'darkblue') +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+    labs(
+        title = "Average Total Intensity by Hour of the Day",
+        x = "Hour of the Day",
+        y = "Mean Intensity"
+        ) +
+    theme_minimal() +
+    theme(
+        plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
+        axis.title = element_text(size = 12),
+        axis.text.x = element_text(size = 8),
+        axis.text.y = element_text(size = 10),
+        panel.grid.major = element_line(linewidth = 0.5, color = "gray"),
+        panel.grid.minor = element_blank()
+        )
+```
 
 **Insight:** Activity intensity is generally low during early morning and late night (before 06:00 and after 20:00). Peaks in activity are observed in the **late morning** and **early evening**, suggesting these are prime times for user engagement.
 
@@ -290,7 +313,25 @@ Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQL
 
 This scatter plot investigates the relationship between the number of steps taken and the amount of time spent in sedentary activities.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   # Scatter plot without log transformation  ggplot(data = dailyActivity_merged, aes(x = TotalSteps, y = SedentaryMinutes)) +      geom_point(aes(color = SedentaryMinutes), size = 3, shape = 16, alpha = 0.7) +      geom_smooth(method = "loess", color = "darkblue", se = TRUE, linewidth = 1.2) +      labs(          title = "Steps vs. Sedentary Minutes",          x = "Total Steps",          y = "Sedentary Minutes"      ) +      theme_minimal() +      theme(          plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),          axis.title = element_text(size = 14),          axis.text = element_text(size = 12),          legend.title = element_text(size = 12),          legend.text = element_text(size = 10)      )   `
+```
+# Scatter plot without log transformation
+ggplot(data = dailyActivity_merged, aes(x = TotalSteps, y = SedentaryMinutes)) +
+    geom_point(aes(color = SedentaryMinutes), size = 3, shape = 16, alpha = 0.7) +
+    geom_smooth(method = "loess", color = "darkblue", se = TRUE, linewidth = 1.2) +
+    labs(
+        title = "Steps vs. Sedentary Minutes",
+        x = "Total Steps",
+        y = "Sedentary Minutes"
+        ) +
+    theme_minimal() +
+    theme(
+        plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),
+        axis.title = element_text(size = 14),
+        axis.text = element_text(size = 12),
+        legend.title = element_text(size = 12),
+        legend.text = element_text(size = 10)
+        )
+```
 
 **Insight:** This visualization highlights a clear inverse relationship: as **sedentary minutes increase, total steps generally decrease**. This underscores the significant impact of inactivity on overall daily movement. The data reveals that users spend a large portion of their day being sedentary, with a median of 1229 steps, far below health recommendations.
 
