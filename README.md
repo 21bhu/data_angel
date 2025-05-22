@@ -207,9 +207,27 @@ weightloginfo_merged %>%
 
 ### 4\. Data Merging
 
-To facilitate a comprehensive analysis, relevant datasets were merged based on common identifiers (Id) and Date (after consistent formatting).
+To facilitate a comprehensive analysis, relevant datasets were merged based on common identifiers (`Id`) and `Date` (after consistent formatting).
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   # Rename 'ActivityDate' to 'Date' in dailyActivity_merged for consistency  dailyActivity_merged <- dailyActivity_merged %>%    rename(Date = ActivityDate)  # Convert 'Date' columns to Date type in both dataframes  sleepDay_merged$Date <- as.Date(sleepDay_merged$Date, format="%m/%d/%Y")  dailyActivity_merged$Date <- as.Date(dailyActivity_merged$Date, format="%m/%d/%Y")  # Merge data frames by 'Id' and 'Date'  merged_data <- merge(sleepDay_merged, dailyActivity_merged, by=c('Id', 'Date'))  # Assign to 'data' for further use  data <- merged_data  # Check the merged data structure and column names  print(head(data))  print(colnames(data))   `
+```
+# Rename 'ActivityDate' to 'Date' in dailyActivity_merged for consistency
+dailyActivity_merged <- dailyActivity_merged %>%
+    rename(Date = ActivityDate)
+
+# Convert 'Date' columns to Date type in both dataframes
+sleepDay_merged$Date <- as.Date(sleepDay_merged$Date, format="%m/%d/%Y")
+dailyActivity_merged$Date <- as.Date(dailyActivity_merged$Date, format="%m/%d/%Y")
+
+# Merge data frames by 'Id' and 'Date'
+merged_data <- merge(sleepDay_merged, dailyActivity_merged, by=c('Id', 'Date'))
+
+# Assign to 'data' for further use
+data <- merged_data
+
+# Check the merged data structure and column names
+print(head(data))
+print(colnames(data))
+```
 
 ### 5\. Data Visualization
 
@@ -219,15 +237,44 @@ Several visualizations were created to illustrate the trends and relationships w
 
 This plot explores the correlation between the actual time slept and the total time spent in bed.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   # Rename columns for clarity (adjust based on actual names if different in your loaded CSV)  names(sleepDay_merged) <- c("Id", "Date", "TotalSleep", "TotalTimeInBed")  # Plot relationship between Total Minutes Asleep and Total Time in Bed  ggplot(data=sleepDay_merged, aes(x=TotalSleep, y=TotalTimeInBed)) +    geom_point() +    geom_smooth(method='lm', color='blue') +    labs(title="Relationship Between Minutes Asleep and Time in Bed",         x="Total Minutes Asleep",         y="Total Time in Bed") +    theme_minimal()   `
+```
+# Rename columns for clarity (adjust based on actual names if different in your loaded CSV)
+names(sleepDay_merged) <- c("Id", "Date", "TotalSleep", "TotalTimeInBed")
 
-**Insight:** The correlation between TotalSleep and TotalTimeInBed was found to be **0.0367**, indicating a **weak relationship**. This suggests that simply being in bed for a long time doesn't necessarily translate to more actual sleep for these users.
+# Plot relationship between Total Minutes Asleep and Total Time in Bed
+ggplot(data=sleepDay_merged, aes(x=TotalSleep, y=TotalTimeInBed))+
+        geom_point() +
+        geom_smooth(method='lm', color='blue') +
+        labs(title="Relationship Between Minutes Asleep and Time in Bed", x="Total Minutes Asleep", y="Total Time in Bed") +
+        theme_minimal()
+```
+
+**Insight:** The correlation between `TotalSleep` and `TotalTimeInBed` was found to be **0.0367**, indicating a **weak relationship**. This suggests that simply being in bed for a long time doesn't necessarily translate to more actual sleep for these users.
 
 #### b. Relationship Between Total Steps and Calories Burned
 
 This visualization demonstrates the intuitive positive correlation between physical activity (steps) and energy expenditure (calories).
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   # Plot Total Steps vs. Calories with enhanced aesthetics  ggplot(data = dailyActivity_merged, aes(x = TotalSteps, y = Calories)) +      geom_point(aes(color = Calories), size = 3, alpha = 0.6) +      geom_smooth(method = "lm", color = "blue", se = FALSE) +      labs(          title = "Relationship Between Total Steps and Calories Burned",          x = "Total Steps",          y = "Calories Burned"      ) +      theme_minimal() +      theme(          plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),          axis.title = element_text(size = 12),          axis.text = element_text(size = 10),          panel.grid.major = element_line(linewidth = 0.5, color = "gray"),          panel.grid.minor = element_blank()      ) +      scale_color_viridis_c()   `
+```
+# Plot Total Steps vs. Calories with enhanced aesthetics
+ggplot(data = dailyActivity_merged, aes(x = TotalSteps, y = Calories)) +
+        geom_point(aes(color = Calories), size = 3, alpha = 0.6) +
+        geom_smooth(method = "lm", color = "blue", se = FALSE) +
+    labs(
+        title = "Relationship Between Total Steps and Calories Burned",
+        x = "Total Steps",
+        y = "Calories Burned"
+        ) +
+    theme_minimal() +
+    theme(
+        plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
+        axis.title = element_text(size = 12),
+        axis.text = element_text(size = 10),
+        panel.grid.major = element_line(linewidth = 0.5, color = "gray"),
+        panel.grid.minor = element_blank()
+        ) +
+        scale_color_viridis_c()
+```
 
 **Insight:** As expected, there is a **positive correlation** between Total Steps and Calories Burned. The more active users are, the more calories they tend to burn. However, the data also shows variability, with some users burning fewer calories for similar step counts, highlighting differences in activity intensity or individual metabolism.
 
