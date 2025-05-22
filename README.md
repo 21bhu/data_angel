@@ -120,15 +120,77 @@ head(dailyActivity_merged)
 
 ### 2\. Data Cleaning and Preprocessing
 
-A crucial part of the analysis involved converting ActivityDate columns to a Date format and handling inconsistencies in data types, particularly for numerical columns that were read as characters due to comma delimiters. Missing values were addressed by replacing NA with 0 or omitting rows where appropriate to ensure data integrity for analysis.
+A crucial part of the analysis involved converting `ActivityDate` columns to a `Date` format and handling inconsistencies in data types, particularly for numerical columns that were read as characters due to comma delimiters. Missing values were addressed by replacing NA with 0 or omitting rows where appropriate to ensure data integrity for analysis.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   # Convert ActivityDate column to Date type  dailyActivity_merged$ActivityDate <- as.Date(dailyActivity_merged$ActivityDate, format="%m/%d/%Y")  # Convert columns from character to numeric, handling any issues with formatting  # This process was done iteratively for all relevant columns,  # including TotalDistance, TrackerDistance, LoggedActivitiesDistance, etc.  dailyActivity_merged$TotalDistance <- as.numeric(gsub(",", "", dailyActivity_merged$TotalDistance))  dailyActivity_merged$TotalDistance[is.na(dailyActivity_merged$TotalDistance)] <- 0  # Similarly for other distance and minutes columns  dailyActivity_merged$TrackerDistance <- as.numeric(gsub(",", "", dailyActivity_merged$TrackerDistance))  dailyActivity_merged$TrackerDistance[is.na(dailyActivity_merged$TrackerDistance)] <- 0  # ... (repeat for other columns like LoggedActivitiesDistance, VeryActiveDistance, etc.)  dailyActivity_merged$VeryActiveMinutes <- as.numeric(gsub(",", "", dailyActivity_merged$VeryActiveMinutes))  dailyActivity_merged$VeryActiveMinutes[is.na(dailyActivity_merged$VeryActiveMinutes)] <- 0  dailyActivity_merged$FairlyActiveMinutes <- as.numeric(gsub(",", "", dailyActivity_merged$FairlyActiveMinutes))  dailyActivity_merged$FairlyActiveMinutes[is.na(dailyActivity_merged$FairlyActiveMinutes)] <- 0  dailyActivity_merged$LightlyActiveMinutes <- as.numeric(gsub(",", "", dailyActivity_merged$LightlyActiveMinutes))  dailyActivity_merged$LightlyActiveMinutes[is.na(dailyActivity_merged$LightlyActiveMinutes)] <- 0  dailyActivity_merged$SedentaryMinutes <- as.numeric(gsub(",", "", dailyActivity_merged$SedentaryMinutes))  dailyActivity_merged$SedentaryMinutes[is.na(dailyActivity_merged$SedentaryMinutes)] <- 0  dailyActivity_merged$Calories <- as.numeric(gsub(",", "", dailyActivity_merged$Calories))  dailyActivity_merged$Calories[is.na(dailyActivity_merged$Calories)] <- 0  # Drop any rows with missing values that couldn't be appropriately handled  dailyActivity_merged <- dailyActivity_merged %>% drop_na()  # Check the structure of the data  str(dailyActivity_merged)   `
+```
+# Convert ActivityDate column to Date type
+dailyActivity_merged$ActivityDate <- as.Date(dailyActivity_merged$ActivityDate, format="%m/%d/%Y")
+
+# Convert columns from character to numeric, handling any issues with formatting
+# This process was done iteratively for all relevant columns,
+# including TotalDistance, TrackerDistance, LoggedActivitiesDistance, etc.
+dailyActivity_merged$TotalDistance <- as.numeric(gsub(",", "", dailyActivity_merged$TotalDistance))
+dailyActivity_merged$TotalDistance[is.na(dailyActivity_merged$TotalDistance)] <- 0
+
+# Similarly for other distance and minutes columns
+dailyActivity_merged$TrackerDistance <- as.numeric(gsub(",", "", dailyActivity_merged$TrackerDistance))
+dailyActivity_merged$TrackerDistance[is.na(dailyActivity_merged$TrackerDistance)] <- 0
+
+# ... (repeat for other columns like LoggedActivitiesDistance, VeryActiveDistance, etc.)
+dailyActivity_merged$VeryActiveMinutes <- as.numeric(gsub(",", "", dailyActivity_merged$VeryActiveMinutes))
+dailyActivity_merged$VeryActiveMinutes[is.na(dailyActivity_merged$VeryActiveMinutes)] <- 0
+
+dailyActivity_merged$FairlyActiveMinutes <- as.numeric(gsub(",", "", dailyActivity_merged$FairlyActiveMinutes))
+dailyActivity_merged$FairlyActiveMinutes[is.na(dailyActivity_merged$FairlyActiveMinutes)] <- 0
+
+dailyActivity_merged$LightlyActiveMinutes <- as.numeric(gsub(",", "", dailyActivity_merged$LightlyActiveMinutes))
+dailyActivity_merged$LightlyActiveMinutes[is.na(dailyActivity_merged$LightlyActiveMinutes)] <- 0
+
+dailyActivity_merged$SedentaryMinutes <- as.numeric(gsub(",", "", dailyActivity_merged$SedentaryMinutes))
+dailyActivity_merged$SedentaryMinutes[is.na(dailyActivity_merged$SedentaryMinutes)] <- 0
+
+dailyActivity_merged$Calories <- as.numeric(gsub(",", "", dailyActivity_merged$Calories))
+dailyActivity_merged$Calories[is.na(dailyActivity_merged$Calories)] <- 0
+
+# Drop any rows with missing values that couldn't be appropriately handled
+dailyActivity_merged <- dailyActivity_merged %>% drop_na()
+
+# Check the structure of the data
+str(dailyActivity_merged)
+```
 
 ### 3\. Data Exploration and Summary Statistics
 
 Key metrics were explored to understand user behavior patterns. This involved looking at unique IDs, summarizing active minutes, calories burned, sleep patterns, and weight information.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   # Explore number of unique participants in each dataset  n_distinct(dailyActivity_merged$Id)  n_distinct(sleepDay_merged$Id)  n_distinct(dailyCalories_merged$Id)  n_distinct(weightloginfo_merged$Id)  n_distinct(dailyIntensities_merged$Id)  # Summarize active minutes per category  dailyActivity_merged %>%    select(VeryActiveMinutes, FairlyActiveMinutes, LightlyActiveMinutes, SedentaryMinutes) %>%    summary()  # Summarize calories burned  dailyCalories_merged %>%    select(Calories) %>%    summary()  # Summarize sleep data  sleepDay_merged %>%    select(TotalSleep, TotalTimeInBed) %>% # Assuming these are the correct column names for sleep duration    summary()  # Summarize weight data  weightloginfo_merged %>%    select(WeightKg, BMI) %>%    summary()   `
+```
+# Explore number of unique participants in each dataset
+n_distinct(dailyActivity_merged$Id)
+n_distinct(sleepDay_merged$Id)
+n_distinct(dailyCalories_merged$Id)
+n_distinct(weightloginfo_merged$Id)
+n_distinct(dailyIntensities_merged$Id)
+
+# Summarize active minutes per category
+dailyActivity_merged %>%
+    select(VeryActiveMinutes, FairlyActiveMinutes, LightlyActiveMinutes, SedentaryMinutes) %>%
+    summary()
+
+# Summarize calories burned
+dailyCalories_merged %>%
+    select(Calories) %>%
+    summary()
+
+# Summarize sleep data
+sleepDay_merged %>%
+    select(TotalSleep, TotalTimeInBed) %>% # Assuming these are the correct column names for sleep duration
+    summary()
+
+# Summarize weight data
+weightloginfo_merged %>%
+    select(WeightKg, BMI) %>%
+    summary()
+```
 
 **Key Findings from Data Exploration:**
 
