@@ -7,6 +7,7 @@ This project, completed as part of the Google Data Analytics Professional Certif
 # Table of Contents
 
 ## Problem Statement
+[Problem Statement](#problem-statement)
 
 ## Business Task
 
@@ -37,6 +38,8 @@ This project, completed as part of the Google Data Analytics Professional Certif
 Key Insights and Recommendations
 
 Conclusion
+
+
 
 [Problem Statement](#problem-statement)
 
