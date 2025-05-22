@@ -1,5 +1,6 @@
-Bellabeat Smart Device Usage Analysis
-Overview
+#Bellabeat Smart Device Usage Analysis
+
+#Overview
 
 This project, completed as part of the Google Data Analytics Professional Certificate, analyzes fitness tracker data from Bellabeat, a high-tech company manufacturing health-focused smart products for women. The primary goal is to identify trends in smart device usage and provide high-level recommendations to inform Bellabeat's marketing strategy for future growth.
 Table of Contents
@@ -23,6 +24,14 @@ Table of Contents
         4. Data Merging
 
         5. Data Visualization
+
+            a. Relationship Between Minutes Asleep and Time in Bed
+
+            b. Relationship Between Total Steps and Calories Burned
+
+            c. Average Total Intensities by Hour of the Day
+
+            d. Steps vs. Sedentary Minutes
 
     Key Insights and Recommendations
 
