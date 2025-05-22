@@ -62,7 +62,7 @@ Identify potential growth opportunities and recommendations for Bellabeat's mark
 Data Source
 -----------
 
-The analysis utilizes public fitness tracker data available on Kaggle, specifically a subset of the data from the study: "[Daily Activity, Sleep, and Weight Log Information from a Wearable Device](https://www.kaggle.com/datasets/arunimajain03/bellabeat-data-for-google-data-analytics-capstone)". The datasets used include:
+The analysis utilizes public fitness tracker data available on Kaggle, specifically a subset of the data from the study: "[Daily Activity, Sleep, and Weight Log Information from a Wearable Device](https://www.kaggle.com/code/bhumikanayak21/bhumika-s-portfolio-on-bellabeat/notebook)". The datasets used include:
 
 *   dailyActivity\_merged.csv
     
@@ -86,7 +86,7 @@ The analysis was conducted using:
     
 *   **RStudio** (Integrated Development Environment)
     
-*   Key R packages: dplyr, ggplot2, lubridate, patchwork, viridis
+*   Key R packages: `dplyr`, `ggplot2`, `lubridate`, `patchwork`, `viridis`
     
 
 Analysis Process
