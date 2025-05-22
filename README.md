@@ -3,17 +3,18 @@
 # Overview
 
 This project, completed as part of the Google Data Analytics Professional Certificate, analyzes fitness tracker data from Bellabeat, a high-tech company manufacturing health-focused smart products for women. The primary goal is to identify trends in smart device usage and provide high-level recommendations to inform Bellabeat's marketing strategy for future growth.
-Table of Contents
 
-    Problem Statement
+# Table of Contents
 
-    Business Task
+    ## Problem Statement
 
-    Data Source
+    ## Business Task
 
-    Tools
+    ## Data Source
 
-    Analysis Process
+    ## Tools
+
+    ## Analysis Process
 
         1. Data Loading and Initial Inspection
 
@@ -37,7 +38,7 @@ Table of Contents
 
     Conclusion
 
-Problem Statement
+[Problem Statement](#problem-statement)
 
 Bellabeat, while successful, has the potential to expand its presence in the global smart device market. Urška Sršen, cofounder and Chief Creative Officer, believes that analyzing fitness data from smart devices can unlock new growth avenues. The core questions guiding this analysis are:
 
