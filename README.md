@@ -9,11 +9,11 @@ This project, completed as part of the Google Data Analytics Professional Certif
 
 [Problem Statement](#problem-statement)
 
-## Business Task
+[Business Task](#business-task)
 
-## Data Source
+[Data Source](#data-source)
 
-## Tools
+[Tools](#tools)
 
 ## Analysis Process
 
@@ -50,10 +50,11 @@ Bellabeat, while successful, has the potential to expand its presence in the glo
 
     How could these trends help influence Bellabeat's marketing strategy?
 
-Business Task
+## Business Task
 
 Identify potential growth opportunities and recommendations for Bellabeat's marketing strategy improvement based on observed trends in smart device usage.
-Data Source
+
+## Data Source
 
 The analysis utilizes public fitness tracker data available on Kaggle, specifically a subset of the data from the study: "Daily Activity, Sleep, and Weight Log Information from a Wearable Device". The datasets used include:
 
@@ -69,7 +70,7 @@ The analysis utilizes public fitness tracker data available on Kaggle, specifica
 
     weightLogInfo_merged.csv
 
-Tools
+## Tools
 
 The analysis was conducted using:
 
