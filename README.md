@@ -96,7 +96,17 @@ Analysis Process
 
 The first step involved loading all necessary datasets and performing initial checks to understand their structure and content.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   # Load necessary libraries  library(dplyr)  library(ggplot2)  library(patchwork) # For combining plots  library(tidyverse)  library(viridis)  library(lubridate)  library(readr)  # Load your data  dailyActivity_merged <- read.csv("/kaggle/input/bhumikas-portfolio/dailyActivity_merged.csv")  dailyCalories_merged <- read.csv("/kaggle/input/bhumikas-portfolio/hourlyCalories_merged.csv")  dailyIntensities_merged <- read.csv("/kaggle/input/bhumikas-portfolio/hourlyIntensities_merged.csv")  dailySteps_merged <- read.csv("/kaggle/input/bhumikas-portfolio/minuteStepsNarrow_merged.csv")  sleepDay_merged <- read.csv("/kaggle/input/bhumikas-portfolio/minuteSleep_merged.csv")  weightloginfo_merged <- read.csv("/kaggle/input/bhumikas-portfolio/weightLogInfo_merged.csv")  # Display head of dailyActivity_merged  head(dailyActivity_merged)   `
+` # Load necessary libraries  
+library(dplyr)  
+library(ggplot2)  
+library(patchwork) # For combining plots  
+library(tidyverse)  
+library(viridis)  
+library(lubridate)  
+library(readr) ` 
+
+# Load your data  
+dailyActivity_merged <- read.csv("/kaggle/input/bhumikas-portfolio/dailyActivity_merged.csv")  dailyCalories_merged <- read.csv("/kaggle/input/bhumikas-portfolio/hourlyCalories_merged.csv")  dailyIntensities_merged <- read.csv("/kaggle/input/bhumikas-portfolio/hourlyIntensities_merged.csv")  dailySteps_merged <- read.csv("/kaggle/input/bhumikas-portfolio/minuteStepsNarrow_merged.csv")  sleepDay_merged <- read.csv("/kaggle/input/bhumikas-portfolio/minuteSleep_merged.csv")  weightloginfo_merged <- read.csv("/kaggle/input/bhumikas-portfolio/weightLogInfo_merged.csv")  # Display head of dailyActivity_merged  head(dailyActivity_merged)   `
 
 ### 2\. Data Cleaning and Preprocessing
 
