@@ -6,37 +6,37 @@ This project, completed as part of the Google Data Analytics Professional Certif
 
 # Table of Contents
 
-    ## Problem Statement
+## Problem Statement
 
-    ## Business Task
+## Business Task
 
-    ## Data Source
+## Data Source
 
-    ## Tools
+## Tools
 
-    ## Analysis Process
+## Analysis Process
 
-        1. Data Loading and Initial Inspection
+    1. Data Loading and Initial Inspection
 
-        2. Data Cleaning and Preprocessing
+    2. Data Cleaning and Preprocessing
 
-        3. Data Exploration and Summary Statistics
+    3. Data Exploration and Summary Statistics
 
-        4. Data Merging
+    4. Data Merging
 
-        5. Data Visualization
+    5. Data Visualization
 
-            a. Relationship Between Minutes Asleep and Time in Bed
+        a. Relationship Between Minutes Asleep and Time in Bed
 
-            b. Relationship Between Total Steps and Calories Burned
+        b. Relationship Between Total Steps and Calories Burned
 
-            c. Average Total Intensities by Hour of the Day
+        c. Average Total Intensities by Hour of the Day
 
-            d. Steps vs. Sedentary Minutes
+        d. Steps vs. Sedentary Minutes
 
-    Key Insights and Recommendations
+Key Insights and Recommendations
 
-    Conclusion
+Conclusion
 
 [Problem Statement](#problem-statement)
 
