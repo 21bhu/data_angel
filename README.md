@@ -1,7 +1,33 @@
 Bellabeat Smart Device Usage Analysis
 Overview
 
-This project, completed as part of the Google Data Analytics Professional Certificate, aims to analyze fitness tracker data from Bellabeat, a high-tech company manufacturing health-focused smart products for women. The goal is to identify trends in smart device usage and provide high-level recommendations to inform Bellabeat's marketing strategy for growth opportunities.
+This project, completed as part of the Google Data Analytics Professional Certificate, analyzes fitness tracker data from Bellabeat, a high-tech company manufacturing health-focused smart products for women. The primary goal is to identify trends in smart device usage and provide high-level recommendations to inform Bellabeat's marketing strategy for future growth.
+Table of Contents
+
+    Problem Statement
+
+    Business Task
+
+    Data Source
+
+    Tools
+
+    Analysis Process
+
+        1. Data Loading and Initial Inspection
+
+        2. Data Cleaning and Preprocessing
+
+        3. Data Exploration and Summary Statistics
+
+        4. Data Merging
+
+        5. Data Visualization
+
+    Key Insights and Recommendations
+
+    Conclusion
+
 Problem Statement
 
 Bellabeat, while successful, has the potential to expand its presence in the global smart device market. Urška Sršen, cofounder and Chief Creative Officer, believes that analyzing fitness data from smart devices can unlock new growth avenues. The core questions guiding this analysis are:
@@ -33,11 +59,13 @@ The analysis utilizes public fitness tracker data available on Kaggle, specifica
 
 Tools
 
+The analysis was conducted using:
+
     R (for data manipulation, analysis, and visualization)
 
-    RStudio (IDE)
+    RStudio (Integrated Development Environment)
 
-    dplyr, ggplot2, lubridate, patchwork, viridis (R packages)
+    Key R packages: dplyr, ggplot2, lubridate, patchwork, viridis
 
 Analysis Process
 1. Data Loading and Initial Inspection
@@ -189,9 +217,6 @@ ggplot(data=sleepDay_merged, aes(x=TotalSleep, y=TotalTimeInBed)) +
        y="Total Time in Bed") +
   theme_minimal()
 
-
-(Please replace images/minutes_asleep_vs_time_in_bed.png with the actual path to your saved plot image.)
-
 Insight: The correlation between TotalSleep and TotalTimeInBed was found to be 0.0367, indicating a weak relationship. This suggests that simply being in bed for a long time doesn't necessarily translate to more actual sleep for these users.
 b. Relationship Between Total Steps and Calories Burned
 
@@ -215,9 +240,6 @@ ggplot(data = dailyActivity_merged, aes(x = TotalSteps, y = Calories)) +
         panel.grid.minor = element_blank()
     ) +
     scale_color_viridis_c()
-
-
-(Please replace images/steps_vs_calories.png with the actual path to your saved plot image.)
 
 Insight: As expected, there is a positive correlation between Total Steps and Calories Burned. The more active users are, the more calories they tend to burn. However, the data also shows variability, with some users burning fewer calories for similar step counts, highlighting differences in activity intensity or individual metabolism.
 c. Average Total Intensities by Hour of the Day
@@ -248,9 +270,6 @@ ggplot(data = hourlyIntensities_merged, aes(x = ActivityHour, y = AverageIntensi
     panel.grid.minor = element_blank()
   )
 
-
-(Please replace images/intensity_by_hour.png with the actual path to your saved plot image.)
-
 Insight: Activity intensity is generally low during early morning and late night (before 06:00 and after 20:00). Peaks in activity are observed in the late morning and early evening, suggesting these are prime times for user engagement.
 d. Steps vs. Sedentary Minutes
 
@@ -273,9 +292,6 @@ ggplot(data = dailyActivity_merged, aes(x = TotalSteps, y = SedentaryMinutes)) +
         legend.title = element_text(size = 12),
         legend.text = element_text(size = 10)
     )
-
-
-(Please replace images/steps_vs_sedentary_minutes.png with the actual path to your saved plot image.)
 
 Insight: This visualization highlights a clear inverse relationship: as sedentary minutes increase, total steps generally decrease. This underscores the significant impact of inactivity on overall daily movement. The data reveals that users spend a large portion of their day being sedentary, with a median of 1229 steps, far below health recommendations.
 Key Insights and Recommendations
